@@ -119,14 +119,14 @@ h3,
 }
 
 .description{
-    display: none;
+    opacity: 0;
+    transition: .15s ease-in-out;
     margin-top: 20px;
 }
 
 section.banner img{
     width: 100%;
 }
-.h
 
 main{
     width: 90%;
@@ -159,6 +159,7 @@ main section article i{
     position: absolute;
     right: 20px;
     top: -15px;
+    transition: transform .3s ease-in-out; /*se le da la transición en 0.3*/
 }
 
 main section h3{
@@ -175,13 +176,48 @@ article div.main-article{
     padding: 15px;
 }
 
+.btnEnviar{
+    transition: background 0.5s; /* acá le damos al botón del login la transición a color en medio seg*/
+}
+
+.btnEnviar:hover{
+    background: rgb(255, 0, 0); /*acá le damos color al botón enviar del login en HOVER*/
+}
+
+.mainDivFooter{
+    display: flex;
+    justify-content: center;
+}
+footer{
+    margin-top: 15px;
+}
+
+.mainDivFooter div{
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    text-align: center;
+}
+.mainDivFooter div i{
+    font-size: 25px;
+    color: blue;
+    text-align: center;
+}
+footer h6{
+    text-align: center;
+}
+
 @media (min-width: 361px){
-    main section article .description{
-        display: block;
+    main section article:hover i{
+        transform: rotate(-90deg); /*rotación del camioncito en hover*/
     }
 
-    main section article{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    main section article:hover .description{
+        opacity: 1; /*muestra la descripcion del producto haciendo hover en el article*/
+    }
+
+    main section article:hover{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100); /*muestra la sombra del article en el hover*/
     }
 
     main section div.products{
@@ -200,7 +236,6 @@ article div.main-article{
     .discount{
         width: 50%;
     }
-
 
 }
 
@@ -226,47 +261,11 @@ article div.main-article{
     header ul li{
         padding: 5px;
     }
-    
-}
-header nav{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 3vw 1.9vw 3vw;
-}
 
-.main-navbar ul{
-    display: flex;
-    gap:3vw
+   
 }
-
-.main-navbar li{
-    font-size: 1.5vw;
-}
-    
-header .top-header{
-    padding: 2vw 0vw 4.5vw 0vw;
-}
-
-header .top-header p{
-    align-items: center;
-    font-size: 1.5vw;
-}
-
-header .logo{
-    width: 31%;
-    align-items: center;
-    padding: 0vw;
-}
-
-header .formSearch{
-    width: 31%;
-    align-items: center;
-}
-
-header .inputSearch{
-    font-size: 2vw;
-    height: 5vh 
-}
-.inputSearchIcono ::placeholder{
-    font-size: 90%;
+@media (max-width: 769px){
+    .mainDivFooter{
+        display: block;
+    }
 }
